@@ -1,0 +1,14 @@
+{%extends "/base.html"%}
+{%block title%}{{title}}{%endblock%}
+{%block body%}
+<h1>{{title}}</h1>
+{%if published_date%}<small>{{published_date}}</small>{%endif%}
+<div class="blog-content">{{body}}</div>
+{%if author%}
+<hr/>
+<div>{{author}}</div>
+{%endif%}
+<div>
+
+</div>
+{%endblock%}

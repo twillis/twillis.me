@@ -1,0 +1,156 @@
+{%extends "/base.html"%}
+{%block title%}Projects{%endblock%}
+{%block body%}
+  <div class="row project">
+    <div class="large-12 columns">
+      <h2>Spazzer</h2>
+      <p>This project came about because I often found myself at parties
+	with my laptop and needed a way to let people browse my music
+	collection without me having to setup a user for ssh or samba etc....
+      </p>
+      <p>As I get time I am revamping the UI to use ember.js</p>
+    </div>
+    <div class="large-12 columns">
+      <div class="row">
+        <div class="large-6 columns">
+          <div class="panel">
+	    <h3>Technologies Used</h3>
+            <ul class="list">
+              <li>python</li>
+              <li>pyramid</li>
+              <li>sqlalchemy</li>
+              <li>javascript</li>
+	      <li>jquery/jquery-ui</li>
+            </ul>
+          </div>
+        </div>
+        <div class="large-6 columns">
+	  <div class="panel">
+	    <h3>The Source</h3>
+	    <p>You can check out the source at <a target="_blank"  href="https://github.com/twillis/spazzer">github</a></p>
+	  </div>
+        </div>
+      </div>
+    </div>
+    <div class="large-12 columns">
+      <p>I would consider the id3 tag scanner to be the most
+	challenging piece I wrote for 2 reasons</p>
+	<ol class="list">
+          <li>It needed to be fast, and favor new things being
+            added. But also remove things that no longer exist.</li>
+            <li>It needed to be resilient when faced with
+              questionable tag data. Not everyone keeps their tags
+              pristine in their music collections</li>
+	</ol>
+    </div>
+  </div>
+  <div class="row project">
+    <div class="large-12 columns">
+      <h2>pyramid_appengine</h2>
+      <p>This is a scaffold that creates a buildout based directory
+	structure that is a bit easier to handle than virtualenv.</p>
+    </div>
+      <div class="large-6 columns">
+	<div class="panel">
+	  <h3>Technologies used</h3>
+          <ul class="list">
+            <li>python</li>
+            <li>pyramid</li>
+            <li>buildout</li>
+            <li>google appengine</li>
+          </ul>
+	</div>
+      </div>
+      <div class="large-6 columns">
+	<div class="panel">
+	  <h3>The Source</h3>
+          <p>You can check out the source at <a target="_blank" href="https://github.com/Batterii/pyramid_appengine">github</a>
+          </p>
+	</div>
+    </div>
+    <div class="large-12 columns">
+      <p>I wrote this as part of the pycon/pyramid sprints in 2012. I had
+	never written a scaffold before so that was fun. it was nice
+	to take a step back from the environment we built up at
+	batterii over the years and boil it down to the essentials
+	that anyone can use.</p>
+	<p>This scaffold gets moderate usage from the community and one
+	  of the interesting side-effects of releasing this is that bugs
+	  filed are more about education on how appengine projects work
+	  and how python packaging works than about things not working in
+	  the scaffold itself. Though since it has to keep up with the app
+	  engine SDK release schedule, bugs do happen.</p>
+    </div>
+  </div>
+  <div class="row project">
+    <div class="large-12 columns">
+      <h2>diredly</h2>
+      <p>This is an experimental static site generator I'm
+        maintaining and using for various projects.</p>
+    </div>
+      <div class="large-6 columns">
+        <div class="panel">
+	  <h3>Technologies used</h3>
+	  <ul class="list">
+            <li>python</li>
+            <li>pyramid</li>
+	  </ul>
+        </div>
+      </div>
+      <div class="large-6 columns">
+        <div class="panel">
+	  <h3>The Source</h3>
+	  <p>You can check out the source at <a target="_blank" href="https://github.com/twillis/diredly">github</a>
+	  </p>
+        </div>
+      </div>
+    <div class="large-12 columns">
+      <p>Yes there are plenty of static site generators out
+	there. Some are arguably better than this for a specific
+	purpose. I've found that for me, sometimes I just need a little
+	bit of a template, and other times I need to create content with
+	a bit more structure more like a cms or blog.</p>
+        <p>So, I decided to see how far I could get abusing pyramids
+        traversal mechanism and this is the result. I predict that in
+        the future I'll either realize why I should use something
+        else like pelican or sphinx, or I will have built up
+        everything I typically need to build a staticish website.</p>
+    </div>
+  </div>
+<div class="row project">
+  <div class="large-12 columns">
+    <h2>webobtoolkit</h2>
+    <p>This is a collection of utilities and wsgi middleware for
+    building http clients using webob.</p>
+  </div>
+      <div class="large-6 columns">
+        <div class="panel">
+	<h3>Technologies Used</h3>
+        <ul class="list">
+            <li>python</li>
+            <li>webob</li>
+        </ul>
+        </div>
+      </div>
+      <div class="large-6 columns">
+        <div class="panel">
+	  <h3>The Source</h3>
+	  <p>You can check out the source at <a target="_blank" href="https://github.com/Batterii/webobtoolkit">github</a>
+	  </p>
+        </div>
+      </div>
+  <div class="large-12 columns">
+    <p>Webob does a great job of handling all the messy intricacies
+    of HTTP, being on appengine we use it a lot. A while back webob
+    grew some rudimentary client functionality but it wasn't as
+    robust as it could be. So as an experiment, I wrote some unit
+    tests that were inspired by the <a target="_blank"
+    href="http://docs.python-requests.org/en/latest/user/quickstart/">requests
+    quick start</a>. Things like cookie handling between requests and
+    handling gzipped responses was added as wsgi middleware allowing
+    us to construct a nice http client that could be used on
+    appengine and as a bonus the responses were the same type as what
+    is used in our code already.</p>
+  </div>
+</div>
+{%endblock%}

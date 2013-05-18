@@ -1,0 +1,24 @@
+{%extends "/base.html"%}
+{%block title%}Tom Willis{%endblock%}
+{%block body%}
+{%if not entries%}
+<h1>There's nothing here</h1>
+{%endif%}
+{%for entry in entries%}
+<div class="row">
+    <div class="large-12 columns">
+      <h1><a href="{{entry.page.url}}">{{entry.title}}</a></h1>
+      {%if entry.published_date%}<small>{{entry.published_date}}</small>{%endif%}
+
+      <div class="blog-content">{{entry.teaser or entry.body}}</div>
+      <hr/>
+      {%if entry.teaser%}
+      <div><a class="button tiny" href="{{entry.page.url}}">read
+      more</a>
+      </div>
+      {%endif%}
+    </div>
+</div>
+{%endfor%}
+{%endblock%}
+

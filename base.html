@@ -1,0 +1,77 @@
+{#provides blocks title head_addl nav, body and footer and all the things needed
+to get foundation css to work#}
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width" />
+      <title>{%block title%}The Title of the Page{%endblock%}</title>
+      <link rel="stylesheet" href="/css/foundation.css" />
+      <link rel="stylesheet" href="/css/site.css" />
+      <script src="/js/vendor/custom.modernizr.js"></script>
+      {%block head_addl%}
+	<!-- put more things here as you need them -->
+      {%endblock%}
+    </head>
+    <body>
+      <div class="container">
+ 	{%block nav%}
+	  <nav class="top-bar">
+	    <ul class="title-area">
+	      <li class="name">
+		<h1><a href="/">Tom Willis</a></h1>
+	      </li>
+	      <li class="toggle-topbar menu-icon">
+		<a href=""><span></span></a>
+	      </li>
+	    </ul>
+	    <section class="top-bar-section">
+	      <ul class="right">
+		<li><a href="/projects/index.html">Projects</a></li>
+		<li><a href="/blog/index.html">Blog</a></li>
+		<li><a href="/music/index.html">Music</a></li>
+	      </ul>
+	    </section>
+	  </nav>
+	{%endblock%}
+        <div class="row">
+          <div class="large-12 columns">
+	    {%block body%}
+	      inherit from this guy
+	    {%endblock%}
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
+            <div class="fine-print">
+	    {%block footer%}
+	      <p>I created this
+		with <a href="https://github.com/twillis/diredly" target="_blank">diredly</a>
+		and <a href="http://foundation.zurb.com/" target="_blank">foundation
+		css</a></p>
+		<p>Unless otherwise noted, all information here can be
+		  shared as long as the original source is
+		  referenced. In other words...</p>
+		  <blockquote>"Don't be a dick"
+		    -- The Wise Words of &nbsp;<a href="https://plus.google.com/+WilWheaton"
+		    target="_blank">Will Wheaton</a></blockquote>
+		    <p>Copyright &copy; 2013 Tom Willis All Rights Reserved</p>
+		  {%endblock%}
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+	document.write('<script src=' +
+	('__proto__' in {} ? '/js/vendor/zepto' : '/js/vendor/jquery') +
+	'.js><\/script>')
+	</script>
+	
+	<script src="/js/foundation.min.js"></script>
+	<script>
+	  $(document).foundation();
+	</script>
+    </body>
+  </html>
